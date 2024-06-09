@@ -7,7 +7,7 @@ notes.get('/', (req, res) => {
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
 });
 
-  // This API route is a POST Route for a new UX/UI tip
+  // This API route is a POST Route for a new notes
 notes.post('/', (req, res) => {
     console.info(`${req.method} request note added`);
   
@@ -27,6 +27,7 @@ notes.post('/', (req, res) => {
     }
   });
 
+  // This API route is a delete for deleting a post 
 notes.delete('/:id', (req, res) => {
   const notesId = req.params.id;
   readFromFile('./db/db.json').then((data) => JSON.parse(data))
